@@ -3,6 +3,7 @@ import { Button, ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter, Link } from "react-router-dom";
 // ローカルインポート
 import theme from './theme/theme';
+import { Router } from "./router/Router"
 
 function App() {
   return (
