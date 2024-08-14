@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Button, ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          {/* <Link to="/">Home</Link><br />
+          <Link to="/login">Login</Link><br />
+          <Link to="/setting">Setting</Link><br />
+          <Link to="/user-mng">UserManagement</Link><br /> */}
+
+          <Router />
+        </BrowserRouter>
+      </ChakraProvider>
     </div>
   );
 }
