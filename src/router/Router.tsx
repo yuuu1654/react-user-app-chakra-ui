@@ -13,7 +13,7 @@ export const Router: FC = memo(() => {
       <Route path="/" element={<Login />} />
 
       {/* ログイン後の画面 */}
-      <Route path="/home" element={<Home />} />
+      <Route path="/home" element={<HeaderLayout><Home /></HeaderLayout>} />
       <Route
         path="/home/*"
         element={
