@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
-import { FC, memo, useCallback } from "react";
+import { FC, memo } from "react";
 import { MenuIconButton } from "../../atoms/button/MenuIconButton";
 import { MenuDrawer } from "../../moleculus/MenuDrawer";
 import { useNavigate } from "react-router-dom";
@@ -44,7 +44,7 @@ export const Header: FC = memo(() => {
           </Heading>
         </Flex>
         
-        <Flex bg={"green.100"}>
+        <Flex bg={"green.100"} display={{ base: "none" , md: "flex" }}>
           <Box pr={4}>
             <Link onClick={onClickUserManagement}>ユーザー一覧</Link>
           </Box>
