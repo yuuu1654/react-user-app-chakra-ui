@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 export const useAuth = () => {
   const [loading, setLoading] = useState(false)
   const navigation = useNavigate()
+  const { showMessage } = useMessage();
   const login = useCallback((id: string) => {  
     setLoading(true)
     axios
@@ -26,13 +27,14 @@ export const useAuth = () => {
         if (result.data) {
           // ホーム画面に遷移
           console.log(result.data)
+          showMessage({ title: "ログイン成功しました！", status: "success" })
           navigation("/home")
         } else {
-          alert("ユーザーが見つかりません")
+          showMessage({ title: "ユーザーが見つかりません", status: "error" })
         }
       })
       .catch(() => {
-        alert("ログインできません")
+        showMessage({ title: "ログインできません", status: "error" })
       })
       .finally(() => {
         setLoading(false)
