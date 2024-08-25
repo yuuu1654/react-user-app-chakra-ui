@@ -65,6 +65,7 @@ export const UserManagement: FC = memo(() => {
         isOpen={isOpen} 
         onClose={onClose} 
         user={selectedUser}
+        isAdmin={loginUser?.isAdmin}
       />
     </>
     
