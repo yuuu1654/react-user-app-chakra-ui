@@ -5,6 +5,7 @@ import { useAllUsers } from "../../hooks/useAllUsers";
 import { UserCard } from "../organisms/user/UserCard";
 import { UserDetailModal } from "../organisms/user/UserDetailModal";
 import { useSelectUsers } from "../../hooks/useSelectUsers";
+import { useLoginUser } from "../../hooks/useLoginUser";
 /**
  * 画面ロード時にユーザー一覧を取得する処理を走らせる
  *  -> useEffect apiを使用する？
@@ -14,7 +15,9 @@ export const UserManagement: FC = memo(() => {
   const { loading, users, fetchUsers } = useAllUsers();
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { findUser, selectedUser } = useSelectUsers();
+  const { loginUser } = useLoginUser();
   console.log("UserManagement側のselectedUser", selectedUser)
+  console.log("ログインユーザー", loginUser)
 
   /**
    * ▼ propsとして渡す関数は、毎回再作成するとレンダリング効率が悪いので、useCallbackを使用
